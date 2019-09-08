@@ -39,7 +39,7 @@ namespace SampleSite
 
             services.AddTransient<IEmailSender, EmailSender>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc(opt => opt.EnableEndpointRouting = false).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
 

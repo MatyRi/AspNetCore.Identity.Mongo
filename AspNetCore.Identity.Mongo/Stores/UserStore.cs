@@ -289,7 +289,7 @@ namespace AspNetCore.Identity.Mongo.Stores
 		{
 		    cancellationToken.ThrowIfCancellationRequested();
 
-		    await SetNormalizedEmailAsync(user, _normalizer.Normalize(user.Email), cancellationToken);
+		    await SetNormalizedEmailAsync(user, _normalizer.NormalizeEmail(user.Email), cancellationToken);
             user.Email = email;
 		    
 		    await _userCollection.UpdateAsync(user);
